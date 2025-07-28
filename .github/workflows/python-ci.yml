@@ -27,3 +27,9 @@ jobs:
     - name: Run tests with pytest
       run: |
         pytest tes --cov=src
+    - name:Build and Push Docker Images
+      uses: docker/build-push-action@v3
+      with:
+        image: tush1809/python-demo
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_USERNAME_PASSWORD }}
